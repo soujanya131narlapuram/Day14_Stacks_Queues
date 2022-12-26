@@ -4,7 +4,7 @@ public class LinkedList<T> {
     Node<T> head;
     Node<T> tail;
 
-    public void push(T key){                       // appending  UC3
+    public void push(T key){
         Node ptr = head;
         Node<T> newNode = new Node(key);
         if(head == null){
@@ -18,9 +18,12 @@ public class LinkedList<T> {
     }
 
 
-    public void displayQueue(){              // UC1
-        Node ptr = head;   // ptr = pointer
-
+    public void displayQueue(){
+        Node ptr = head;
+        if(head==null){
+            System.out.println("Queue is Empty");
+            return;
+        }
         while(ptr != null){
             if(ptr.next !=null){
                 System.out.print(ptr.key + "->");
@@ -31,5 +34,18 @@ public class LinkedList<T> {
         }
 
         System.out.println("");
+    }
+
+    public void pop(){
+        if(head==null){
+            System.out.println("Queue is Empty");
+            return;
+        }
+        if(head != null){
+            Node ptr = head;
+            head = head.next;
+            System.gc();
+        }
+        this.displayQueue();
     }
 }

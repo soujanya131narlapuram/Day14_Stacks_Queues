@@ -10,5 +10,12 @@ public class LinkedListMain {
         System.out.println("Queue after pushing 70");
         queue.push(70);
         System.out.println("");
+
+        System.out.println("Pop 56 from Queue");
+        queue.pop();
+        System.out.println("Pop 30 from Queue");
+        queue.pop();
+        System.out.println("Pop 70 from Queue");
+        queue.pop();
     }
 }
