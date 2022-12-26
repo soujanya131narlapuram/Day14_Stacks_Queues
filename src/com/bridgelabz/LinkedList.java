@@ -4,20 +4,21 @@ public class LinkedList<T> {
     Node<T> head;
     Node<T> tail;
 
-    public void push(T key) {
+    public void push(T key){                       // appending  UC3
+        Node ptr = head;
         Node<T> newNode = new Node(key);
         if(head == null){
             head = newNode;
             tail = newNode;
         } else {
-            newNode.next = head;
-            head = newNode;
+            tail.next = newNode;
+            tail = newNode;
         }
-        this.displayStack();
+        this.displayQueue();
     }
 
 
-    public void displayStack(){              // UC1
+    public void displayQueue(){              // UC1
         Node ptr = head;   // ptr = pointer
 
         while(ptr != null){
@@ -31,22 +32,4 @@ public class LinkedList<T> {
 
         System.out.println("");
     }
-
-    public void pop(){
-        if(head != null){
-            Node ptr = head;
-            head = head.next;
-            System.gc();
-        }
-        this.displayStack();
-    }
-
-    public void peak(){
-        if(head != null){
-            System.out.println("Top element in the stack is " + head.key);
-        } else{
-            System.out.println("stack is empty");
-        }
-    }
-
 }
