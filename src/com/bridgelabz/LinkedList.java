@@ -31,4 +31,22 @@ public class LinkedList<T> {
 
         System.out.println("");
     }
+
+    public void pop(){
+        if(head != null){
+            Node ptr = head;
+            head = head.next;
+            System.gc();
+        }
+        this.displayStack();
+    }
+
+    public void peak(){
+        if(head != null){
+            System.out.println("Top element in the stack is " + head.key);
+        } else{
+            System.out.println("stack is empty");
+        }
+    }
+
 }

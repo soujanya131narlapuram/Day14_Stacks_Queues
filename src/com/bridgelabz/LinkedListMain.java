@@ -9,5 +9,16 @@ public class LinkedListMain {
         stack.push(30);
         System.out.println("Stack after pushing 56");
         stack.push(56);
+
+
+        System.out.println("Pop 56 from stack");
+        stack.pop();
+        stack.peak();
+        System.out.println("Pop 30 from stack");
+        stack.pop();
+        stack.peak();
+        System.out.println("Pop 70 from stack");
+        stack.pop();
+        stack.peak();
     }
 }
